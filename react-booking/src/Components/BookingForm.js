@@ -1,92 +1,37 @@
 import React from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form } from 'formik';
 import PropTypes from 'prop-types';
 
+//UI
+import FormItem from './FormItem';
+
+//BL
+import { formInitialValues } from '../Assets/Data';
+
+/**
+ * It's a function that returns a booking form using formik library
+ * @param props - {
+ * @returns A Form component that has a FormItem component for each field.
+ */
 function BookingForm(props) {
 	return (
-		<div className='py-4 px-6 rounded-full bg-gray-100 w-fit mx-auto'>
+		<div className='py-4 px-6 md:rounded-full bg-gray-100 md:w-fit md:mx-auto'>
 			<Formik
-				initialValues={{}}
+				initialValues={formInitialValues}
 				onSubmit={(values) => {
 					console.log(values);
 				}}
 			>
-				{({ isSubmitting }) => (
-					<Form className='flex flex-row gap-3'>
-						<div className='flex flex-col gap-2'>
-							<label
-								className='text-sm font-medium text-gray-900 dark:text-gray-300'
-								htmlFor='from'
-							>
-								From:
-							</label>
-							<Field
-								type='from'
-								name='from'
-								className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1'
-							/>
-							<ErrorMessage name='from' component='div' />
-						</div>
-						<div className='flex flex-col gap-2'>
-							<label
-								className='text-sm font-medium text-gray-900 dark:text-gray-300'
-								htmlFor='to'
-							>
-								To:
-							</label>
-							<Field
-								type='to'
-								name='to'
-								className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1'
-							/>
-							<ErrorMessage name='to' component='div' />
-						</div>
-						<div className='flex flex-col gap-2'>
-							<label
-								className='text-sm font-medium text-gray-900 dark:text-gray-300'
-								htmlFor='to'
-							>
-								Check-in
-							</label>
-							<Field
-								type='to'
-								name='to'
-								className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1'
-							/>
-							<ErrorMessage name='to' component='div' />
-						</div>
-						<div className='flex flex-col gap-2'>
-							<label
-								className='text-sm font-medium text-gray-900 dark:text-gray-300'
-								htmlFor='to'
-							>
-								Check-out
-							</label>
-							<Field
-								type='to'
-								name='to'
-								className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1'
-							/>
-							<ErrorMessage name='to' component='div' />
-						</div>
-						<div className='flex flex-col gap-2'>
-							<label
-								className='text-sm font-medium text-gray-900 dark:text-gray-300'
-								htmlFor='to'
-							>
-								Guests
-							</label>
-							<Field
-								type='to'
-								name='to'
-								className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1'
-							/>
-							<ErrorMessage name='to' component='div' />
-						</div>
+				{() => (
+					<Form className='flex flex-col md:flex-row gap-3'>
+						<FormItem labelText='From:' fieldName='from' />
+						<FormItem labelText='To:' fieldName='to' />
+						<FormItem labelText='Check-in' fieldName='check_in' />
+						<FormItem labelText='Check-out' fieldName='check_out' />
+						<FormItem labelText='Guests' fieldName='guests' />
 						<button
 							className='cursor-pointer text-xs md:text-sm rounded-full bg-sky-200 py-2 hover:bg-sky-300 w-28 text-center mt-auto'
 							type='submit'
-							disabled={isSubmitting}
 						>
 							Search
 						</button>
