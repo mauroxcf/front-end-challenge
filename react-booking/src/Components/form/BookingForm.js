@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 
 //UI
 import FormItem from './FormItem';
+import DatePickerField from './DatePickerField';
 
 //BL
-import { formInitialValues } from '../Assets/Data';
-import bookingFilter from '../utils/BookingFilter';
-import { bookingList } from '../Assets/dummyData';
-import DatePickerField from './DatePickerField';
+import { formInitialValues } from '../../Assets/Data';
+import bookingFilter from '../../utils/BookingFilter';
+import { bookingList } from '../../Assets/dummyData';
 
 /**
  * It's a function that returns a booking form using formik library

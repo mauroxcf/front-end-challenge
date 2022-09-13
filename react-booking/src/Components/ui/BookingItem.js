@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 //UI
-import airplane from '../Assets/icons/airplane.png';
+import airplane from '../../Assets/icons/airplane.png';
 
 /**
  * renders a component using the booking data, city, date, flight, etc.

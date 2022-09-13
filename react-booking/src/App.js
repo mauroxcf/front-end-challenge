@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import BookingDetails from './Components/ui/BookingDetails';
-import BookingForm from './Components/BookingForm';
+import BookingForm from './Components/form/BookingForm';
 import BookingList from './Components/ui/BookingList';
 
 function App() {
