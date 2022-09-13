@@ -2,6 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BookingItem from './BookingItem';
 
+/**
+ * It takes in a prop called filterBookingList, which is an array of objects, and maps over it to
+ * create a BookingItem component for each object in the array.
+ * @returns A list of BookingItems
+ */
 function BookingList({ filterBookingList, setShowModal, setSingleFlight }) {
 	return (
 		<div className='flex flex-col gap-4'>

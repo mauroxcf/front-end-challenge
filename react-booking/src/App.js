@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import BookingDetails from './Components/BookingDetails';
+import BookingDetails from './Components/ui/BookingDetails';
 import BookingForm from './Components/BookingForm';
-import BookingList from './Components/BookingList';
+import BookingList from './Components/ui/BookingList';
 
 function App() {
 	const [showModal, setShowModal] = useState(false);

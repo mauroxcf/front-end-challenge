@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * return a modal with information about a single flight
+ * @returns A modal with information.
+ */
 function BookingDetails({ singleFlight, setShowModal }) {
 	return (
 		<div className='fixed inset-0 flex items-center justify-center z-50'>
