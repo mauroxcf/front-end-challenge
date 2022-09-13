@@ -21,7 +21,11 @@ function DatePickerField({ ...props }) {
 					setFieldValue(field.name, formatDate(val));
 				}}
 			/>
-			<ErrorMessage name={field.name} component='div' />
+			<ErrorMessage
+				className='text-sm text-red-400'
+				name={field.name}
+				component='div'
+			/>
 		</div>
 	);
 }

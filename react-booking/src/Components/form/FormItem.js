@@ -17,7 +17,11 @@ function FormItem({ labelText, fieldType, fieldName }) {
 				name={fieldName}
 				className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-1'
 			/>
-			<ErrorMessage name={fieldName} component='div' />
+			<ErrorMessage
+				className='text-sm text-red-400'
+				name={fieldName}
+				component='div'
+			/>
 		</div>
 	);
 }

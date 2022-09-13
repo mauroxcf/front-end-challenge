@@ -7,7 +7,7 @@ import FormItem from './FormItem';
 import DatePickerField from './DatePickerField';
 
 //BL
-import { formInitialValues } from '../../Assets/Data';
+import { formInitialValues, formValidationSchema } from '../../Assets/Data';
 import bookingFilter from '../../utils/BookingFilter';
 import { bookingList } from '../../Assets/dummyData';
 
@@ -24,8 +24,12 @@ function BookingForm({
 		<div className='py-4 px-6 md:rounded-full bg-gray-100 md:w-fit md:mx-auto'>
 			<Formik
 				initialValues={formInitialValues}
+				validationSchema={formValidationSchema}
 				onSubmit={(values) => {
-					setFilterBookingList(bookingFilter(bookingList, values));
+					if (values) {
+						setFilterBookingList(bookingFilter(bookingList, values));
+						setShowBookingList(showBookingList + 1);
+					}
 				}}
 			>
 				{() => (
@@ -38,7 +42,6 @@ function BookingForm({
 						<button
 							className='cursor-pointer text-xs md:text-sm rounded-full bg-sky-200 py-2 hover:bg-sky-300 w-28 text-center mt-auto'
 							type='submit'
-							onClick={() => setShowBookingList(showBookingList + 1)}
 						>
 							Search
 						</button>
