@@ -9,6 +9,7 @@ import FormItem from './FormItem';
 import { formInitialValues } from '../Assets/Data';
 import bookingFilter from '../utils/BookingFilter';
 import { bookingList } from '../Assets/dummyData';
+import DatePickerField from './DatePickerField';
 
 /**
  * It's a function that returns a booking form using formik library
@@ -31,8 +32,8 @@ function BookingForm({
 					<Form className='flex flex-col md:flex-row gap-3'>
 						<FormItem labelText='From:' fieldName='from' />
 						<FormItem labelText='To:' fieldName='to' />
-						<FormItem labelText='Check-in' fieldName='check_in' />
-						<FormItem labelText='Check-out' fieldName='check_out' />
+						<DatePickerField labelText='Check-in' name='check_in' />
+						<DatePickerField labelText='Check-out' name='check_out' />
 						<FormItem labelText='Guests' fieldName='guests' />
 						<button
 							className='cursor-pointer text-xs md:text-sm rounded-full bg-sky-200 py-2 hover:bg-sky-300 w-28 text-center mt-auto'

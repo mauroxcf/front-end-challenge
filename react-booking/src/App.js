@@ -7,7 +7,6 @@ function App() {
 	const [showModal, setShowModal] = useState(false);
 	const [showBookingList, setShowBookingList] = useState(0);
 	const [filterBookingList, setFilterBookingList] = useState([{}]);
-	console.log(filterBookingList);
 	return (
 		<main className='min-h-screen bg-gradient-to-r from-cyan-500 to-blue-500'>
 			<div className='flex flex-col gap-4 pb-4 md:pt-4 md:mx-4'>
