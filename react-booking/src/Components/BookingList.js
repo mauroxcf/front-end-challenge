@@ -6,9 +6,9 @@ function BookingList({ filterBookingList, setShowModal, setSingleFlight }) {
 	return (
 		<div className='flex flex-col gap-4'>
 			{filterBookingList ? (
-				filterBookingList.map((bookingInfo) => (
+				filterBookingList.map((bookingInfo, index) => (
 					<BookingItem
-						key={bookingInfo.flight}
+						key={index}
 						bookingInfo={bookingInfo}
 						setShowModal={setShowModal}
 						setSingleFlight={setSingleFlight}
