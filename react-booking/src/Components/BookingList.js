@@ -2,17 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import BookingItem from './BookingItem';
 
-function BookingList({ setShowModal }) {
+function BookingList({ filterBookingList, setShowModal, setSingleFlight }) {
 	return (
 		<div className='flex flex-col gap-4'>
-			<BookingItem setShowModal={setShowModal} />
-			<BookingItem setShowModal={setShowModal} />
-			<BookingItem setShowModal={setShowModal} />
-			<BookingItem setShowModal={setShowModal} />
+			{filterBookingList ? (
+				filterBookingList.map((bookingInfo) => (
+					<BookingItem
+						key={bookingInfo.flight}
+						bookingInfo={bookingInfo}
+						setShowModal={setShowModal}
+						setSingleFlight={setSingleFlight}
+					/>
+				))
+			) : (
+				<div>No content to show</div>
+			)}
 		</div>
 	);
 }
 
-BookingList.propTypes = {};
+BookingList.propTypes = {
+	/* filtered array of objects with flights information to render */
+	filterBookingList: PropTypes.array,
+	/* function to change the state of show modal */
+	setShowModal: PropTypes.func,
+	/* setstate to save a flight object info */
+	setSingleFlight: PropTypes.func,
+};
 
 export default BookingList;

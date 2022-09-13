@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function BookingDetails({ setShowModal }) {
+function BookingDetails({ singleFlight, setShowModal }) {
 	return (
 		<div className='fixed inset-0 flex items-center justify-center z-50'>
 			<div className='bg-white w-4/5 sm:w-3/5 lg:w-2/5 h-fit z-10 rounded-lg'>
@@ -15,11 +15,11 @@ function BookingDetails({ setShowModal }) {
 							X
 						</button>
 					</div>
-					<p>Flight: 0000</p>
-					<p>From: Cartagena</p>
-					<p>To: Bucaramanga</p>
+					<p>Flight: {singleFlight.flight}</p>
+					<p>From: {singleFlight.from}</p>
+					<p>To: {singleFlight.to}</p>
 					<p>1 stop</p>
-					<p>Flight duration: 1hr</p>
+					<p>Flight duration: 2hrs</p>
 
 					<button
 						className='cursor-pointer bg-sky-300 hover:bg-sky-500 w-28 p-2 text-lg text-center mt-auto'
@@ -35,6 +35,11 @@ function BookingDetails({ setShowModal }) {
 	);
 }
 
-BookingDetails.propTypes = {};
+BookingDetails.propTypes = {
+	/* function that handle to show or not the modal */
+	setShowModal: PropTypes.func,
+	/* object that contents flight information */
+	singleFlight: PropTypes.object,
+};
 
 export default BookingDetails;
